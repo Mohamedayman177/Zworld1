@@ -149,6 +149,18 @@ document.addEventListener("DOMContentLoaded", function () {
           }
         });
 
+        gsap.to(workImage, {
+          filter: 'blur(10px)',
+          opacity: 0.3,
+          ease: 'power2.inOut',
+          scrollTrigger: {
+            trigger: ghostItems[index],
+            scrub: true,
+            start: '0 top',
+            end: '35% top'
+          }
+        });
+
         gsap.from(videoContainer, {
           x: index % 2 === 0 ? '100vw' : '-100vw',
           scrollTrigger: {
@@ -179,6 +191,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
         gsap.to(videoContainer, {
           yPercent: 15,
+          scrollTrigger: stFinal
+        });
+
+        gsap.to(element, {
+          filter: 'blur(1px)',
+          ease: 'power2.inOut',
           scrollTrigger: stFinal
         });
 
