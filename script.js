@@ -63,9 +63,12 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
 
-    if (typeof Lenis !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger);
+    const isMobile = window.matchMedia('(max-width: 767px)').matches;
+
+    if (!isMobile && typeof Lenis !== 'undefined') {
       const lenis = new Lenis({
-        autoRaf: true,
+        autoRaf: false,
         lerp: 0.05,
         wheelMultiplier: 0.7,
       });
@@ -77,12 +80,12 @@ document.addEventListener("DOMContentLoaded", function () {
       gsap.ticker.lagSmoothing(0);
     }
 
-    gsap.registerPlugin(ScrollTrigger);
+    const workSections = document.querySelectorAll('[data-work="section"]');
 
-    const workSection = document.querySelector('[data-work="section"]');
-    const workItems = document.querySelectorAll('[data-work="item"]');
+    workSections.forEach((workSection) => {
+      const workItems = workSection.querySelectorAll('[data-work="item"]');
+      if (!workItems.length) return;
 
-    if (workSection && workItems.length) {
       const ghostContainer = document.createElement('div');
       ghostContainer.className = 'ghost_work-container';
       workSection.appendChild(ghostContainer);
@@ -111,8 +114,8 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!workImage) return;
 
         gsap.set(workImage, {
-          scale: 1.4,
-          yPercent: 10
+          scale: isMobile ? 1.05 : 1.4,
+          yPercent: isMobile ? 0 : 10
         });
 
         const stStarting = {
@@ -128,8 +131,8 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         gsap.to(workImage, {
-          yPercent: 10,
-          scale: 1.2,
+          yPercent: isMobile ? 0 : 10,
+          scale: isMobile ? 1 : 1.2,
           scrollTrigger: stStarting
         });
 
@@ -145,17 +148,19 @@ document.addEventListener("DOMContentLoaded", function () {
           }
         });
 
-        gsap.to(workImage, {
-          filter: 'blur(10px)',
-          opacity: 0.3,
-          ease: 'power2.inOut',
-          scrollTrigger: {
-            trigger: ghostItems[index],
-            scrub: true,
-            start: '0 top',
-            end: '35% top'
-          }
-        });
+        if (!isMobile) {
+          gsap.to(workImage, {
+            filter: 'blur(10px)',
+            opacity: 0.3,
+            ease: 'power2.inOut',
+            scrollTrigger: {
+              trigger: ghostItems[index],
+              scrub: true,
+              start: '0 top',
+              end: '35% top'
+            }
+          });
+        }
 
         gsap.from(videoContainer, {
           x: index % 2 === 0 ? '100vw' : '-100vw',
@@ -190,10 +195,12 @@ document.addEventListener("DOMContentLoaded", function () {
           scrollTrigger: stFinal
         });
 
-        gsap.to(element, {
-          filter: 'blur(1px)',
-          scrollTrigger: stFinal
-        });
+        if (!isMobile) {
+          gsap.to(element, {
+            filter: 'blur(1px)',
+            scrollTrigger: stFinal
+          });
+        }
       });
-    }
+    });
 });

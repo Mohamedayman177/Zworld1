@@ -189,6 +189,13 @@ body {
 .work_video-container {
   aspect-ratio: 16 / 9;
   flex: 1 0 auto;
+  min-width: 0;
+}
+
+.work_video-container img,
+.work_video-container video {
+  max-width: 100%;
+  height: auto;
 }
 
 .work_item-wrapper {
@@ -251,6 +258,8 @@ color: #fff;
   width: 100%;
   height: 100%;
   position: relative;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 .color-3 {
@@ -444,6 +453,68 @@ color: #fff;
 }
 
 @media screen and (max-width: 767px) {
+  .nav {
+    padding: 12px 14px 0;
+  }
+
+  .nav_top-wrapper {
+    width: 100%;
+  }
+
+  .nav_top {
+    margin-bottom: 8px;
+  }
+
+  .nav_link {
+    font-size: 10px;
+  }
+
+  .nav .logo_img {
+    width: 112px;
+  }
+
+  .work_item {
+    min-height: 100svh;
+  }
+
+  .work_item-wrapper {
+    min-width: 0;
+    padding: 14vw 1rem 2rem;
+  }
+
+  .work_text-title {
+    max-width: 100%;
+    font-size: clamp(1.65rem, 8vw, 3rem);
+  }
+
+  .work-text-subtitle {
+    max-width: 100%;
+    font-size: clamp(0.72rem, 2.5vw, 0.95rem);
+    line-height: 1.4;
+  }
+
+  .work_text .line-wrapper {
+    max-width: 100%;
+  }
+
+  .work_video-wrapper {
+    width: 100%;
+    max-width: 100%;
+    gap: 0.75rem;
+    overflow: hidden;
+  }
+
+  .work_video-container {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .work_video-container img,
+  .work_video-container video {
+    width: 100% !important;
+    height: auto !important;
+  }
+
   .site_header {
     padding: 0.75rem 1rem 0;
   }
