@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Cinematic Scroll GSAP</title>
+
+  <!-- GSAP -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+  <!-- ScrollTrigger -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+  <!-- LENIS -->
+  <script src="https://unpkg.com/lenis@1.1.16/dist/lenis.min.js"></script>
+
+  <!-- FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="styles.css">
+
+
+</head>
+
+<body>
+
+  <nav class="nav">
+    <div class="nav_top-wrapper">
+      <div class="nav_top">
+        <a href="index.html" class="nav_link logo_link"> <img src="https://res.cloudinary.com/ngymeeef/image/upload/v1786400144/LOGO_eoyx90.png" alt="Zworld Logo" class="logo_img"> </a>
+        <a href="Contact-us.html" class="nav_link">CONTACT</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero_section sticky" id="top">
+    <div class="hero_container">
+      <div class="footer_image-wrapper">
+        <img src="https://res.cloudinary.com/ngymeeef/image/upload/v1788169205/1_fdkk2m.webp" alt="hero" class="hero_image">
+      </div>
+      <div class="hero_text-wrap">
+        <div class="hero_text">
+          <div>CONTACT<span class="color-0"> US </span></div>
+        </div>
+        <div class="scroll_indicator" aria-hidden="true">
+          <span>scroll Down</span>
+          <span class="scroll_arrow">↓</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<!--------------------------------------------------------------------------------------------------------->
+</section>
+
+  <section class="work_section" data-work="section"></section>
+
+  <section class="form_section" id="form">
+    <div class="form_section-inner">
+      <div class="form_intro">
+        <div class="map_intro_top">
+          <span class="eyebrow"></span>
+        </div>
+
+        <div class="map_grid">
+          <article class="map_card map_card--1">
+            <div class="map_visual">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3451.878560712373!2d31.373732075012526!3d30.097664116048147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145817ff846aa94b%3A0x8e2b953c7cb30ec2!2sZworld!5e0!3m2!1sen!2seg!4v1788348411622!5m2!1sen!2seg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Cairo Office location"></iframe>
+            </div>
+            <div class="map_meta">
+              <strong>Cairo Office</strong>
+              <span>Egypt</span>
+            </div>
+            <div class="map_details">
+              <span>+20 105 033 4577</span>
+              <address>11 Fouad Thabet St., Square 1166, Sheraton, Cairo, Egypt</address>
+            </div>
+          </article>
+
+          <article class="map_card map_card--2">
+<div class="map_visual">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.9331981693977!2d55.2970706748399!3d25.272832528634076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f4344592fb641%3A0x71b00ad54fb12bfa!2s105%20-%20Al%20Daghaya%20-%20Deira%20-%20Dubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2seg!4v1788348908614!5m2!1sen!2seg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>            </div>            
+              <!-- Add the Dubai Google Maps iframe here. -->
+            </a>
+            <div class="map_meta">
+              <strong>Dubai Office</strong>
+              <span>UAE</span>
+            </div>
+            <div class="map_details">
+              <span>+09 7155 4471</span>
+              <address>Office 105, Gafar Abdallah Gafar 208 Al Ras, 112-280, Dubai</address>
+            </div>
+          </article>
+
+          <article class="map_card map_card--3">
+<div class="map_visual">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3034.867512480479!2d-3.6900570245138207!3d40.4781959518968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd42296bf51ef367%3A0x2e0b6de52edebf52!2sRegus%20-%20Torre%20de%20Cristal!5e0!3m2!1sen!2seg!4v1788348812626!5m2!1sen!2seg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>            </div>             
+              <!-- Add the Spain Google Maps iframe here. -->
+            </a>
+            <div class="map_meta">
+              <strong>Spain Office</strong>
+              <span>Madrid</span>
+            </div>
+            <div class="map_details">
+              <address>Regus Torre de Cristal, Cuatro Torres Business Area, Paseo de la Castellana 259C, Planta 18, 28046 Madrid, Spain</address>
+            </div>
+          </article>
+
+          <article class="map_card map_card--4">
+<div class="map_visual">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3622.152170852684!2d46.64512817482438!3d24.790242348064723!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f03890d489399%3A0x3d0c07de18a84f7a!2sQJRX%2B33W%2C%20Riyadh%20Saudi%20Arabia!5e0!3m2!1sen!2seg!4v1788348729517!5m2!1sen!2seg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>            </div>             
+              <!-- Add the KSA Google Maps iframe here. -->
+            </a>
+            <div class="map_meta">
+              <strong>KSA Office</strong>
+              <span>Riyadh</span>
+            </div>
+            <div class="map_details">
+              <span>+966 54 870 6306</span>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="form_card">
+        <form class="form_grid">
+          <div class="field">
+            <label for="first-name">First Name</label>
+            <input id="first-name" type="text" name="first_name" placeholder="Your name" />
+          </div>
+
+          <div class="field">
+            <label for="last-name">Last Name</label>
+            <input id="last-name" type="text" name="last_name" placeholder="Your surname" />
+          </div>
+
+          <div class="field full">
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" placeholder="name@email.com" />
+          </div>
+
+          <div class="field full">
+            <label for="company">Company</label>
+            <input id="company" type="text" name="company" placeholder="Your company" />
+          </div>
+
+          <div class="field full">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell us about your project"></textarea>
+          </div>
+
+          <div class="field full">
+            <button class="form_submit" type="submit">Send Request</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+   <section class="footer_section" id="contact">
+    <div class="footer_container">
+      <div class="footer_image-wrapper">
+        <img src="assets/img/Gemini_Generated_Image_7rz5bu7rz5bu7rz5.png" 
+          alt="footer" class="footer_image">
+      </div>
+
+      <div class="footer_text">
+        <div>YOU<br><span class="color-0">scrollED </span></div>
+      </div>
+
+      <form class="footer_contact-form" data-contact-form>
+        <label for="footer-email">Stay in touch</label>
+        <div class="footer_contact-row">
+          <input id="footer-email" type="email" name="email" placeholder="Your email address" autocomplete="email" required>
+          <button type="submit" aria-label="Send your email">Send</button>
+        </div>
+        <p class="footer_contact-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+  <!-- JS -->
+  <script src="script.js"></script>
+
+</body>
+</html>
