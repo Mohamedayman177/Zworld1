@@ -64,9 +64,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     gsap.registerPlugin(ScrollTrigger);
-    const isMobile = window.matchMedia('(max-width: 767px)').matches;
 
-    if (!isMobile && typeof Lenis !== 'undefined') {
+    if (typeof Lenis !== 'undefined') {
       const lenis = new Lenis({
         autoRaf: false,
         lerp: 0.05,
@@ -114,8 +113,8 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!workImage) return;
 
         gsap.set(workImage, {
-          scale: isMobile ? 1.05 : 1.4,
-          yPercent: isMobile ? 0 : 10
+          scale: 1.4,
+          yPercent: 10
         });
 
         const stStarting = {
@@ -131,8 +130,8 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         gsap.to(workImage, {
-          yPercent: isMobile ? 0 : 10,
-          scale: isMobile ? 1 : 1.2,
+          yPercent: 10,
+          scale: 1.2,
           scrollTrigger: stStarting
         });
 
@@ -148,19 +147,17 @@ document.addEventListener("DOMContentLoaded", function () {
           }
         });
 
-        if (!isMobile) {
-          gsap.to(workImage, {
-            filter: 'blur(10px)',
-            opacity: 0.3,
-            ease: 'power2.inOut',
-            scrollTrigger: {
-              trigger: ghostItems[index],
-              scrub: true,
-              start: '0 top',
-              end: '35% top'
-            }
-          });
-        }
+        gsap.to(workImage, {
+          filter: 'blur(10px)',
+          opacity: 0.3,
+          ease: 'power2.inOut',
+          scrollTrigger: {
+            trigger: ghostItems[index],
+            scrub: true,
+            start: '0 top',
+            end: '35% top'
+          }
+        });
 
         gsap.from(videoContainer, {
           x: index % 2 === 0 ? '100vw' : '-100vw',
@@ -195,12 +192,10 @@ document.addEventListener("DOMContentLoaded", function () {
           scrollTrigger: stFinal
         });
 
-        if (!isMobile) {
-          gsap.to(element, {
-            filter: 'blur(1px)',
-            scrollTrigger: stFinal
-          });
-        }
+        gsap.to(element, {
+          filter: 'blur(1px)',
+          scrollTrigger: stFinal
+        });
       });
     });
 });
