@@ -63,6 +63,8 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
 
+    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+
     gsap.registerPlugin(ScrollTrigger);
 
     if (typeof Lenis !== 'undefined') {
@@ -98,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return ghostItem;
       });
 
-      gsap.set('.work_item', {
+      gsap.set(workItems, {
         position: 'fixed',
         top: '0',
         clipPath: 'inset(100% 0 0% 0)'
@@ -147,18 +149,6 @@ document.addEventListener("DOMContentLoaded", function () {
           }
         });
 
-        gsap.to(workImage, {
-          filter: 'blur(10px)',
-          opacity: 0.3,
-          ease: 'power2.inOut',
-          scrollTrigger: {
-            trigger: ghostItems[index],
-            scrub: true,
-            start: '0 top',
-            end: '35% top'
-          }
-        });
-
         gsap.from(videoContainer, {
           x: index % 2 === 0 ? '100vw' : '-100vw',
           scrollTrigger: {
@@ -192,10 +182,10 @@ document.addEventListener("DOMContentLoaded", function () {
           scrollTrigger: stFinal
         });
 
-        gsap.to(element, {
-          filter: 'blur(1px)',
-          scrollTrigger: stFinal
-        });
       });
+    });
+
+    window.addEventListener('load', () => {
+      ScrollTrigger.refresh();
     });
 });
